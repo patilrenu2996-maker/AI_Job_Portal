@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>AI Resume Improvement</title>
+
+    <style>
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f7fb;
+            margin: 0;
+            padding: 30px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: auto;
+        }
+
+        h1 {
+            text-align: center;
+            color: #2563eb;
+        }
+
+        .card {
+            background: white;
+            padding: 25px;
+            margin: 20px 0;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+
+        .score-box {
+            text-align: center;
+        }
+
+        .score {
+            width: 140px;
+            height: 140px;
+            border-radius: 50%;
+            background: #2563eb;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: auto;
+            font-size: 35px;
+            font-weight: bold;
+        }
+
+
+        .card h2 {
+            color: #1e40af;
+        }
+
+
+        ul {
+            line-height: 2;
+        }
+
+
+        .improve-btn {
+
+            background: #7c3aed;
+            color:white;
+            border:none;
+            padding:12px 25px;
+            border-radius:8px;
+            cursor:pointer;
+            font-size:16px;
+
+        }
+
+
+        .improve-btn:hover {
+            background:#5b21b6;
+        }
+
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<div class="container">
+
+
+<h1>
+🤖 AI Resume Improvement
+</h1>
+
+
+
+<div class="card">
+
+<h2>📄 Current Resume</h2>
+
+<p>
+Resume Name : Resume.pdf
+</p>
+
+<p>
+Last Updated : 06 August 2026
+</p>
+
+<button class="improve-btn">
+View Resume
+</button>
+
+<button class="improve-btn">
+Download Resume
+</button>
+
+</div>
+
+
+
+
+<div class="card score-box">
+
+<h2>📊 AI Resume Score</h2>
+
+
+<div class="score">
+92%
+</div>
+
+
+<p>
+ATS Compatibility : 90%
+</p>
+
+<p>
+Skills Match : 95%
+</p>
+
+<p>
+Projects : 85%
+</p>
+
+
+</div>
+
+
+
+
+
+<div class="card">
+
+<h2>✅ Resume Strengths</h2>
+
+
+<ul>
+
+<li>Strong Technical Skills</li>
+
+<li>Good Academic Profile</li>
+
+<li>Projects Added</li>
+
+<li>ATS Friendly Format</li>
+
+</ul>
+
+
+</div>
+
+
+
+
+
+
+<div class="card">
+
+<h2>⚠️ Areas To Improve</h2>
+
+
+<ul>
+
+<li>Add more technical keywords</li>
+
+<li>Add internship experience</li>
+
+<li>Add GitHub / LinkedIn links</li>
+
+<li>Improve project description</li>
+
+</ul>
+
+
+</div>
+
+
+
+
+
+
+
+<div class="card">
+
+
+<h2>💡 AI Suggestions</h2>
+
+
+<ul>
+
+<li>
+Use action words in project description
+</li>
+
+<li>
+Mention technologies used in projects
+</li>
+
+<li>
+Highlight achievements with numbers
+</li>
+
+
+</ul>
+
+
+</div>
+
+
+
+
+
+<div class="card">
+
+
+<h2>🎯 Recommended Skills</h2>
+
+
+<ul>
+
+<li>Python</li>
+
+<li>Django</li>
+
+<li>SQL</li>
+
+<li>REST API</li>
+
+<li>Machine Learning</li>
+
+</ul>
+
+
+</div>
+
+
+
+
+
+
+<div class="card" style="text-align:center;">
+
+
+<a href="{% url 'generated_resume' %}">
+    <button class="improve-btn generate-btn">
+        Generate Improved Resume
+    </button>
+</a>
+
+
+</div>
+
+
+
+
+</div>
+
+
+</body>
+
+</html>

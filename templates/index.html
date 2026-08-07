@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>AI Job Portal</title>
+
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+</head>
+
+<body>
+
+<!-- ================= NAVBAR ================= -->
+
+<header>
+
+<nav class="navbar">
+
+<div class="logo">
+
+<i class="fa-solid fa-briefcase"></i>
+
+<h2>AI Job Portal</h2>
+
+</div>
+
+<ul class="nav-links">
+
+    <li><a href="{% url 'home' %}">Home</a></li>
+
+    <li><a href="#jobs">Jobs</a></li>
+
+    <li><a href="#companies">Companies</a></li>
+
+    <li><a href="#about">About</a></li>
+
+    <li><a href="#contact">Contact</a></li>
+
+</ul>
+
+<a href="{% url 'login' %}" class="login-btn">Login</a>
+
+</nav>
+
+</header>
+
+<!-- ================= HERO ================= -->
+
+<section class="hero">
+
+<div class="hero-content">
+
+<h1>Find Your Dream Job with AI</h1>
+
+<p>
+
+Search thousands of jobs and get AI-powered recommendations
+based on your skills and interests.
+
+</p>
+
+<a href="{% url 'jobs' %}" class="btn">
+    Explore Jobs
+</a>
+
+</div>
+
+<div class="hero-image">
+
+<img src="{% static 'images/hero.avif' %}" alt="Hero">
+
+</div>
+
+</section>
+
+<!-- ================= SEARCH ================= -->
+
+<section class="search">
+
+<h2>Search Your Dream Job</h2>
+
+<form class="search-box" action="{% url 'search_jobs' %}" method="GET">
+
+<input
+type="text"
+name="job"
+placeholder="Job Title">
+
+<input
+type="text"
+name="location"
+placeholder="Location">
+
+<button type="submit">
+
+<i class="fa-solid fa-magnifying-glass"></i>
+
+Search
+
+</button>
+
+</form>
+
+</section>
+
+<!-- ================= FEATURED COMPANIES ================= -->
+
+<section id="companies">
+
+<h2>Top Companies</h2>
+
+<div class="company-container">
+
+<div class="company-card">
+
+<img src="{% static 'images/company1.png' %}">
+
+<h3>Google</h3>
+
+<p>120 Open Jobs</p>
+
+</div>
+
+<div class="company-card">
+
+<img src="{% static 'images/company2.png' %}">
+<h3>Microsoft</h3>
+
+<p>85 Open Jobs</p>
+
+</div>
+
+<div class="company-card">
+
+<img src="{% static 'images/company3.png' %}">
+
+<h3>Amazon</h3>
+
+<p>97 Open Jobs</p>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ================= AI FEATURES ================= -->
+
+<section class="features">
+
+<h2>AI Features</h2>
+
+<div class="feature-container">
+
+<div class="feature-card">
+
+<i class="fa-solid fa-robot"></i>
+
+<h3>AI Job Match</h3>
+
+<p>Get personalized job recommendations.</p>
+
+</div>
+
+<div class="feature-card">
+
+<i class="fa-solid fa-file"></i>
+
+<h3>Resume Analyzer</h3>
+
+<p>Improve your resume using AI insights.</p>
+
+</div>
+
+<div class="feature-card">
+
+<i class="fa-solid fa-lightbulb"></i>
+
+<h3>Skill Suggestions</h3>
+
+<p>Learn skills required for your dream job.</p>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ================= HOW IT WORKS ================= -->
+
+<section class="steps">
+
+<h2>How It Works</h2>
+
+<div class="step-container">
+
+<div class="step">
+
+<h3>1</h3>
+
+<p>Create Account</p>
+
+</div>
+
+<div class="step">
+
+<h3>2</h3>
+
+<p>Upload Resume</p>
+
+</div>
+
+<div class="step">
+
+<h3>3</h3>
+
+<p>Get AI Recommendations</p>
+
+</div>
+
+<div class="step">
+
+<h3>4</h3>
+
+<p>Apply for Jobs</p>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ================= LATEST JOBS ================= -->
+
+<section id="jobs">
+
+<h2>Latest Jobs</h2>
+
+<div class="job-container">
+
+<div class="job-card">
+
+<h3>Frontend Developer</h3>
+
+<p>Google • Pune</p>
+       
+<a href="{% url 'jobs' %}">Apply Now</a>
+
+</div>
+
+<div class="job-card">
+
+<h3>Python Developer</h3>
+
+<p>Microsoft • Mumbai</p>
+
+<a href="{% url 'jobs' %}">Apply Now</a>
+</div>
+
+<div class="job-card">
+
+<h3>Java Developer</h3>
+
+<p>Amazon • Bangalore</p>
+
+<a href="{% url 'jobs' %}">Apply Now</a>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ================= TESTIMONIALS ================= -->
+
+<section class="testimonial">
+
+<h2>Success Stories</h2>
+
+<div class="testimonial-card">
+
+<p>
+
+"AI Job Portal helped me find my first software job within two weeks."
+
+</p>
+
+<h4>- Rahul Sharma</h4>
+
+</div>
+
+</section>
+
+<!-- ================= ABOUT ================= -->
+
+<section id="about" class="about-section">
+
+    <div class="about-container">
+
+        <h2>About</h2>
+
+        <div class="testimonial-card">
+
+        <p>
+            AI Job Portal is a smart recruitment platform that helps job seekers
+            find the best jobs using Artificial Intelligence.
+        </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ================= CONTACT ================= -->
+
+<section id="contact">
+
+<h2>Contact Us</h2>
+
+<p>Email : support@aijobportal.com</p>
+
+<p>Phone : +91 9876543210</p>
+
+</section>
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+<p>
+
+© 2026 AI Job Portal | All Rights Reserved
+
+</p>
+
+</footer>
+
+<script src="{% static 'js/main.js' %}"></script>
+
+</body>
+
+</html>

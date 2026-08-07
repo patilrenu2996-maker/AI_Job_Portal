@@ -1,0 +1,140 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Register | AI Job Portal</title>
+
+    <link rel="stylesheet" href="{% static 'css/register.css' %}">
+
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <div class="register-box">
+
+        <h1>AI Job Portal</h1>
+
+        <h2>Create Account</h2>
+
+        <form method="POST" action="{% url 'register' %}">
+
+            {% csrf_token %}
+
+            <div class="input-box">
+
+                <i class="fa fa-user"></i>
+
+                <input
+                type="text"
+                name="full_name"
+                placeholder="Full Name"
+                required>
+
+            </div>
+
+            <div class="input-box">
+
+                <i class="fa fa-envelope"></i>
+
+                <input
+                type="email"
+                name="email"
+                placeholder="Email"
+                required>
+
+            </div>
+
+            <div class="input-box">
+
+                <i class="fa fa-phone"></i>
+
+                <input
+                type="text"
+                name="phone"
+                placeholder="Phone Number"
+                required>
+
+            </div>
+
+            <div class="input-box">
+
+                <i class="fa fa-lock"></i>
+
+                <input
+                type="password"
+                id="password"
+                name="password"
+                placeholder="Password"
+                required>
+
+            </div>
+
+            <div class="input-box">
+
+                <i class="fa fa-lock"></i>
+
+                <input
+                type="password"
+                id="confirmPassword"
+                placeholder="Confirm Password"
+                required>
+
+            </div>
+
+            <button type="submit" class="btn">
+
+                Create Account
+
+            </button>
+
+            <p class="login-link">
+
+                Already have an account?
+
+                <a href="{% url 'login' %}">
+
+                    Login
+
+                </a>
+
+            </p>
+
+        </form>
+
+    </div>
+
+</div>
+
+<script>
+
+const form=document.querySelector("form");
+
+form.addEventListener("submit",function(e){
+
+let p=document.getElementById("password").value;
+
+let cp=document.getElementById("confirmPassword").value;
+
+if(p!==cp){
+
+alert("Password and Confirm Password do not match.");
+
+e.preventDefault();
+
+}
+
+});
+
+</script>
+
+</body>
+</html>

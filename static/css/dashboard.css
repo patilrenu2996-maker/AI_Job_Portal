@@ -1,0 +1,777 @@
+/*=========================================
+ AI Job Portal Dashboard CSS
+==========================================*/
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    background:#eef2ff;
+    color:#333;
+}
+
+/*=================================
+ SIDEBAR
+=================================*/
+
+.sidebar{
+    position:fixed;
+    top:0;
+    left:0;
+    width:260px;
+    height:100vh;
+    background:linear-gradient(180deg,#2563eb,#4f46e5,#7c3aed);
+    color:#fff;
+    overflow-y:auto;
+    box-shadow:5px 0 20px rgba(0,0,0,.2);
+}
+
+.logo{
+    text-align:center;
+    padding:30px 20px;
+    border-bottom:1px solid rgba(255,255,255,.2);
+}
+
+.logo i{
+    font-size:45px;
+    margin-bottom:10px;
+}
+
+.logo h2{
+    font-size:28px;
+}
+
+.sidebar ul{
+    list-style:none;
+    padding:20px;
+}
+
+.sidebar ul li{
+    margin-bottom:10px;
+}
+
+.sidebar ul li a{
+    display:flex;
+    align-items:center;
+    gap:15px;
+    padding:15px;
+    color:#fff;
+    text-decoration:none;
+    border-radius:12px;
+    transition:.3s;
+}
+
+.sidebar ul li a i{
+    width:25px;
+}
+
+.sidebar ul li:hover a,
+.sidebar ul li.active a{
+    background:rgba(255,255,255,.18);
+    transform:translateX(6px);
+}
+
+/*=================================
+ MAIN
+=================================*/
+
+.main{
+    margin-left:260px;
+    padding:30px;
+}
+
+/*=================================
+ TOPBAR
+=================================*/
+
+.topbar{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:30px;
+}
+
+.topbar h1{
+    color:#1e3a8a;
+    font-size:34px;
+}
+
+.profile{
+    display:flex;
+    align-items:center;
+    gap:12px;
+}
+
+.profile img{
+    width:55px;
+    height:55px;
+    border-radius:50%;
+    object-fit:cover;
+    border:3px solid #4f46e5;
+}
+
+.profile span{
+    font-weight:600;
+}
+
+/*=================================
+ WELCOME
+=================================*/
+
+.welcome{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:40px;
+    padding:35px;
+    margin-bottom:35px;
+    border-radius:20px;
+    background:rgba(255,255,255,.75);
+    backdrop-filter:blur(18px);
+    box-shadow:0 10px 30px rgba(0,0,0,.08);
+}
+
+.welcome-text h1{
+    color:#0744ea;
+    font-size:34px;
+    margin-bottom:15px;
+}
+
+.welcome-text p{
+    color:#251a1a;
+    margin-bottom:25px;
+}
+
+.welcome img{
+    width:320px;
+}
+
+.btn{
+    display:inline-block;
+    padding:14px 28px;
+    border-radius:30px;
+    background:#254fcc;
+    color:#fff;
+    text-decoration:none;
+    transition:.3s;
+}
+
+.btn:hover{
+    background:#1d4ed8;
+    transform:translateY(-3px);
+}
+
+/*=================================
+ DASHBOARD CARDS
+=================================*/
+
+.cards{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:25px;
+    margin-bottom:35px;
+}
+
+.card{
+    background:rgba(255,255,255,.75);
+    backdrop-filter:blur(15px);
+    padding:30px;
+    border-radius:18px;
+    text-align:center;
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+    transition:.3s;
+    animation:fadeUp .7s ease;
+}
+
+.card:hover{
+    transform:translateY(-8px);
+}
+
+.card i{
+    font-size:42px;
+    color:#4f46e5;
+    margin-bottom:15px;
+}
+
+.card h2{
+    color:#1e3a8a;
+    font-size:32px;
+}
+
+.card p{
+    color:#666;
+}
+
+/*=================================
+ JOB CARDS
+=================================*/
+
+.recommendation{
+    margin-bottom:35px;
+}
+
+.recommendation h2{
+    color:#1e3a8a;
+    margin-bottom:25px;
+}
+
+.job-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:25px;
+}
+
+.job-card{
+    background:#fff;
+    border-radius:18px;
+    padding:25px;
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+    transition:.3s;
+}
+
+.job-card:hover{
+    transform:translateY(-8px);
+}
+
+.job-card h3{
+    color:#1e3a8a;
+    margin-bottom:10px;
+}
+
+.job-card p{
+    color:#555;
+    margin-bottom:12px;
+}
+
+.job-card span{
+    display:inline-block;
+    background:#e0e7ff;
+    color:#4f46e5;
+    padding:6px 14px;
+    border-radius:20px;
+    font-size:13px;
+    margin-bottom:15px;
+}
+
+.job-card a{
+    display:inline-block;
+    padding:10px 20px;
+    background:#2563eb;
+    color:#fff;
+    text-decoration:none;
+    border-radius:25px;
+}
+
+.job-card a:hover{
+    background:#1d4ed8;
+}
+
+/*=================================
+ TABLE
+=================================*/
+
+.table-section{
+    background:#fff;
+    padding:25px;
+    border-radius:18px;
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+    margin-bottom:35px;
+    overflow-x:auto;
+}
+
+.table-section h2{
+    margin-bottom:20px;
+    color:#1e3a8a;
+}
+
+table{
+    width:100%;
+    border-collapse:collapse;
+}
+
+table th{
+    background:#2563eb;
+    color:#fff;
+    padding:15px;
+    text-align:left;
+}
+
+table td{
+    padding:15px;
+    border-bottom:1px solid #eee;
+}
+
+table tbody tr:hover{
+    background:#f4f6ff;
+}
+
+/*=================================
+ STATUS
+=================================*/
+
+.pending,
+.selected,
+.review{
+    color:#fff;
+    padding:6px 14px;
+    border-radius:20px;
+    font-size:13px;
+}
+
+.pending{
+    background:#f59e0b;
+}
+
+.selected{
+    background:#22c55e;
+}
+
+.review{
+    background:#8b5cf6;
+}
+
+/*=================================
+ NOTIFICATIONS
+=================================*/
+
+.notifications{
+    background:#fff;
+    padding:25px;
+    border-radius:18px;
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+}
+
+.notifications h2{
+    color:#1e3a8a;
+    margin-bottom:20px;
+}
+
+.notifications ul{
+    list-style:none;
+}
+
+.notifications li{
+    padding:14px;
+    margin-bottom:12px;
+    border-left:5px solid #4f46e5;
+    background:#f5f7ff;
+    border-radius:8px;
+}
+
+/*=================================
+ ANIMATION
+=================================*/
+
+@keyframes fadeUp{
+
+    from{
+        opacity:0;
+        transform:translateY(25px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+
+}
+
+/*=================================
+ SCROLLBAR
+=================================*/
+
+::-webkit-scrollbar{
+    width:8px;
+}
+
+::-webkit-scrollbar-thumb{
+    background:#4f46e5;
+    border-radius:10px;
+}
+
+/*=================================
+ RESPONSIVE
+=================================*/
+
+@media(max-width:992px){
+
+.sidebar{
+    width:220px;
+}
+
+.main{
+    margin-left:220px;
+}
+
+.welcome{
+    flex-direction:column;
+    text-align:center;
+}
+
+.welcome img{
+    width:250px;
+}
+
+}
+
+@media(max-width:768px){
+
+.sidebar{
+    position:relative;
+    width:100%;
+    height:auto;
+}
+
+.main{
+    margin-left:0;
+}
+
+.topbar{
+    flex-direction:column;
+    gap:20px;
+    align-items:flex-start;
+}
+
+.cards,
+.job-grid{
+    grid-template-columns:1fr;
+}
+
+}
+
+@media(max-width:576px){
+
+.main{
+    padding:20px;
+}
+
+.topbar h1{
+    font-size:28px;
+}
+
+.welcome-text h2{
+    font-size:28px;
+}
+
+.profile{
+    flex-direction:column;
+}
+
+.welcome img{
+    width:180px;
+}
+
+}
+
+/*==================================================
+                DASHBOARD CARDS
+==================================================*/
+
+.cards{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:25px;
+    margin-bottom:40px;
+}
+
+.card{
+    background:#fff;
+    border-radius:20px;
+    padding:30px;
+    text-align:center;
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+    transition:.3s;
+    animation:fadeUp .6s ease;
+}
+
+.card:hover{
+    transform:translateY(-8px);
+    box-shadow:0 20px 35px rgba(37,99,235,.18);
+}
+
+.card i{
+    font-size:42px;
+    color:#4f46e5;
+    margin-bottom:15px;
+}
+
+.card h2{
+    font-size:34px;
+    color:#1e3a8a;
+    margin-bottom:8px;
+}
+
+.card p{
+    color:#666;
+    font-size:15px;
+}
+
+/*==================================================
+            AI RECOMMENDED JOBS
+==================================================*/
+
+.recommendation{
+    margin-bottom:40px;
+}
+
+.recommendation h2{
+    color:#1e3a8a;
+    margin-bottom:25px;
+}
+
+.job-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:25px;
+}
+
+.job-card{
+    background:#fff;
+    padding:25px;
+    border-radius:20px;
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+    transition:.3s;
+}
+
+.job-card:hover{
+    transform:translateY(-8px);
+}
+
+.job-card h3{
+    color:#1e3a8a;
+    margin-bottom:12px;
+}
+
+.job-card p{
+    color:#666;
+    margin-bottom:15px;
+}
+
+.job-card span{
+    display:inline-block;
+    background:#eef2ff;
+    color:#4f46e5;
+    padding:8px 16px;
+    border-radius:30px;
+    font-size:14px;
+    margin-bottom:20px;
+}
+
+.job-card a{
+    display:inline-block;
+    text-decoration:none;
+    background:#2563eb;
+    color:#fff;
+    padding:10px 22px;
+    border-radius:30px;
+    transition:.3s;
+}
+
+.job-card a:hover{
+    background:#1d4ed8;
+}
+
+/*==================================================
+            RECENT APPLICATIONS
+==================================================*/
+
+.table-section{
+    background:#fff;
+    padding:30px;
+    border-radius:20px;
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+    margin-bottom:40px;
+}
+
+.table-section h2{
+    color:#1e3a8a;
+    margin-bottom:20px;
+}
+
+table{
+    width:100%;
+    border-collapse:collapse;
+}
+
+table th{
+    background:#2563eb;
+    color:#fff;
+    padding:15px;
+    text-align:left;
+}
+
+table td{
+    padding:15px;
+    border-bottom:1px solid #eee;
+}
+
+table tbody tr:hover{
+    background:#f8faff;
+}
+
+.pending,
+.selected,
+.review{
+    padding:6px 14px;
+    border-radius:20px;
+    color:#fff;
+    font-size:13px;
+}
+
+.pending{
+    background:#f59e0b;
+}
+
+.selected{
+    background:#22c55e;
+}
+
+.review{
+    background:#3b82f6;
+}
+
+/*==================================================
+                NOTIFICATIONS
+==================================================*/
+
+.notifications{
+    background:#fff;
+    padding:30px;
+    border-radius:20px;
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+    margin-bottom:40px;
+}
+
+.notifications h2{
+    color:#1e3a8a;
+    margin-bottom:20px;
+}
+
+.notifications ul{
+    list-style:none;
+}
+
+.notifications li{
+    padding:15px;
+    margin-bottom:12px;
+    border-left:5px solid #4f46e5;
+    background:#f8faff;
+    border-radius:10px;
+    transition:.3s;
+}
+
+.notifications li:hover{
+    background:#eef2ff;
+}
+
+/*==================================================
+                    FOOTER
+==================================================*/
+
+footer{
+    margin-top:40px;
+    padding:20px;
+    text-align:center;
+    background:linear-gradient(90deg,#2563eb,#4f46e5);
+    color:#fff;
+    border-radius:15px;
+}
+
+/*==================================================
+                ANIMATIONS
+==================================================*/
+
+@keyframes fadeUp{
+
+    from{
+        opacity:0;
+        transform:translateY(25px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+
+}
+
+/*==================================================
+                RESPONSIVE
+==================================================*/
+
+@media(max-width:992px){
+
+.sidebar{
+    width:220px;
+}
+
+.main{
+    margin-left:220px;
+}
+
+.welcome{
+    flex-direction:column;
+    text-align:center;
+}
+
+}
+
+@media(max-width:768px){
+
+.sidebar{
+    position:relative;
+    width:100%;
+    height:auto;
+}
+
+.main{
+    margin-left:0;
+    padding:20px;
+}
+
+.topbar{
+    flex-direction:column;
+    align-items:flex-start;
+    gap:20px;
+}
+
+.cards,
+.job-grid{
+    grid-template-columns:1fr;
+}
+
+table{
+    display:block;
+    overflow-x:auto;
+}
+
+}
+
+@media(max-width:576px){
+
+.welcome{
+    padding:25px;
+}
+
+.welcome h2{
+    font-size:28px;
+}
+
+.card,
+.job-card,
+.table-section,
+.notifications{
+    padding:20px;
+}
+
+.profile span{
+    display:none;
+}
+
+}

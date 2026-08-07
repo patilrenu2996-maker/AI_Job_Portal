@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>AI Job Portal | My Profile</title>
+
+    <link rel="stylesheet" href="{% static 'css/profile.css' %}">
+
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+</head>
+
+<body>
+
+<!-- ================= SIDEBAR ================= -->
+
+<div class="sidebar">
+
+    <div class="logo">
+
+        <i class="fa-solid fa-briefcase"></i>
+
+        <h2>AI Job Portal</h2>
+
+    </div>
+
+    <ul>
+
+        <li>
+
+            <a href="{% url 'dashboard' %}">
+
+                <i class="fa-solid fa-house"></i>
+
+                Dashboard
+
+            </a>
+
+        </li>
+
+        <li>
+
+            <a href="{% url 'jobs' %}">
+
+                <i class="fa-solid fa-briefcase"></i>
+
+                Browse Job
+
+            </a>
+
+        </li>
+
+        <li class="active">
+
+            <a href="{% url 'profile' %}">
+
+                <i class="fa-solid fa-user"></i>
+
+                My Profile
+
+            </a>
+
+        </li>
+
+        <li>
+
+            <a href="#">
+
+                <i class="fa-solid fa-bookmark"></i>
+
+                Saved Jobs
+
+            </a>
+
+        </li>
+
+        <li>
+
+            <a href="index.html">
+
+                <i class="fa-solid fa-right-from-bracket"></i>
+
+                Logout
+
+            </a>
+
+        </li>
+
+    </ul>
+
+</div>
+
+<!-- ================= MAIN CONTENT ================= -->
+
+<div class="main">
+
+    <!-- ================= HEADER ================= -->
+
+    <div class="header">
+
+        <h1>My Profile</h1>
+
+        <a href="{% url 'edit_profile' %}" class="edit-btn">
+                 
+            <i class="fa-solid fa-user-pen"></i>
+                Edit Profile
+        </a>
+
+    </div>
+
+<!-- ================= PROFILE CARD ================= -->
+<section class="profile-card">
+
+    <div class="profile-image">
+
+        <img src="{% static 'images/user1.avif' %}" alt="Profile Image">
+
+        <form method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+
+    <input type="file" id="photoInput" name="photo" hidden
+           onchange="this.form.submit()">
+
+    <button type="button"
+            class="upload-btn"
+            onclick="document.getElementById('photoInput').click();">
+
+        <i class="fa-solid fa-camera"></i>
+        Change Photo
+
+    </button>
+</form>
+
+    </div>
+
+    <div class="profile-info">
+
+        <h2>Renuka Patil</h2>
+
+        <p><i class="fa-regular fa-envelope"></i> renuka@gmail.com</p> <!-- ईमेल आयकॉन हुबेहूब इमेजसारखा Regular केला आहे -->
+
+        <p><i class="fa-solid fa-phone"></i> +91 9876543210</p>
+
+        <p><i class="fa-solid fa-location-dot"></i> Maharashtra, India</p>
+
+        <p><i class="fa-solid fa-briefcase"></i> Computer Engineering Student</p>
+
+    </div>
+
+</section>
+
+
+    <!-- ================= PERSONAL INFORMATION ================= -->
+
+    <section class="info-section">
+
+        <h2>
+
+            <i class="fa-solid fa-id-card"></i>
+
+            Personal Information
+
+        </h2>
+
+        <div class="info-grid">
+
+            <div class="info-box">
+
+                <label>Full Name</label>
+
+                <input type="text" value="Renuka Patil">
+
+            </div>
+
+            <div class="info-box">
+
+                <label>Email</label>
+
+                <input type="email" value="renuka@gmail.com">
+
+            </div>
+
+            <div class="info-box">
+
+                <label>Mobile</label>
+
+                <input type="text" value="+91 9876543210">
+
+            </div>
+
+            <div class="info-box">
+
+                <label>Date of Birth</label>
+
+                <input type="date">
+
+            </div>
+
+            <div class="info-box">
+
+                <label>Gender</label>
+
+                <select>
+
+                    <option>Female</option>
+
+                    <option>Male</option>
+
+                    <option>Other</option>
+
+                </select>
+
+            </div>
+
+            <div class="info-box">
+
+                <label>Address</label>
+
+                <input type="text" value="Maharashtra, India">
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- ================= EDUCATION ================= -->
+
+    <section class="education">
+
+        <h2>
+
+            <i class="fa-solid fa-graduation-cap"></i>
+
+            Education
+
+        </h2>
+
+        <table>
+
+            <thead>
+
+                <tr>
+
+                    <th>Course</th>
+
+                    <th>Institute</th>
+
+                    <th>Year</th>
+
+                    <th>Percentage</th>
+
+                </tr>
+
+            </thead>
+
+            <tbody>
+
+                <tr>
+
+                    <td>Diploma in Computer Engineering</td>
+
+                    <td>MSBTE Polytechnic</td>
+
+                    <td>2024 - 2027</td>
+
+                    <td>82%</td>
+
+                </tr>
+
+                <tr>
+
+                    <td>SSC</td>
+
+                    <td>Maharashtra Board</td>
+
+                    <td>2024</td>
+
+                    <td>90.60%</td>
+
+                </tr>
+
+            </tbody>
+
+        </table>
+
+    </section>
+        <!-- ================= TECHNICAL SKILLS ================= -->
+
+    <section class="skills">
+
+        <h2>
+
+            <i class="fa-solid fa-code"></i>
+
+            Technical Skills
+
+        </h2>
+
+        <div class="skills-container">
+
+            <span>HTML</span>
+
+            <span>CSS</span>
+
+            <span>JavaScript</span>
+
+            <span>Python</span>
+
+            <span>Java</span>
+
+            <span>MySQL</span>
+
+            <span>React</span>
+
+            <span>Git & GitHub</span>
+
+        </div>
+
+    </section>
+
+    <!-- ================= RESUME SECTION ================= -->
+
+    <section class="resume-section">
+
+    <h2>
+        <i class="fa-solid fa-file-arrow-up"></i>
+        Resume
+    </h2>
+
+    <div class="resume-card">
+
+        <i class="fa-solid fa-file-pdf resume-icon"></i>
+
+        {% if user.resume %}
+            <h3>{{ user.resume.name|cut:"resumes/" }}</h3>
+
+            {% if user.resume_updated %}
+                <p>
+                    Last Updated : {{ user.resume_updated|date:"d F Y" }}
+                </p>
+            {% endif %}
+
+            <a href="{{ user.resume.url }}" target="_blank">
+                <button class="view-btn">
+                    View Resume
+                </button>
+            </a>
+
+            {% if user.resume %}
+            <a href="{{ user.resume.url }}" download>
+                <button class="download-btn">
+                            Download Resume
+                </button>
+            </a>
+            {% endif %}
+
+        {% else %}
+            <h3>No Resume Uploaded</h3>
+        {% endif %}
+
+        <form action="{% url 'upload_resume' %}" method="POST" enctype="multipart/form-data">
+
+            {% csrf_token %}
+
+            <input type="file" name="resume" required>
+
+            <button class="upload-btn" type="submit">
+                Upload New Resume
+            </button>
+
+        </form>
+
+    </div>
+
+</section>
+
+    <!-- ================= AI RESUME SCORE ================= -->
+
+    <section class="resume-score">
+
+        <h2>
+
+            <i class="fa-solid fa-robot"></i>
+
+            AI Resume Score
+
+        </h2>
+
+        <div class="score-card">
+
+            <div class="score-circle">
+
+                <h1>92%</h1>
+
+            </div>
+
+            <div class="score-details">
+
+                <p>✔ Strong Technical Skills</p>
+
+                <p>✔ Good Academic Profile</p>
+
+                <p>✔ Resume ATS Friendly</p>
+
+                <p>✔ Project Details Added</p>
+
+        <a href="{% url 'improve_resume' %}">
+            
+            <button class="improve-btn">
+                Improve Resume
+            </button>
+        </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- ================= CAREER STATISTICS ================= -->
+
+    <section class="statistics">
+
+        <h2>
+
+            <i class="fa-solid fa-chart-column"></i>
+
+            Career Statistics
+
+        </h2>
+
+        <div class="stats-grid">
+
+            <div class="stat-card">
+
+                <i class="fa-solid fa-paper-plane"></i>
+
+                <h3>18</h3>
+
+                <p>Applied Jobs</p>
+
+            </div>
+
+            <div class="stat-card">
+
+                <i class="fa-solid fa-bookmark"></i>
+
+                <h3>12</h3>
+
+                <p>Saved Jobs</p>
+
+            </div>
+
+            <div class="stat-card">
+
+                <i class="fa-solid fa-star"></i>
+
+                <h3>92%</h3>
+
+                <p>Resume Score</p>
+
+            </div>
+
+            <div class="stat-card">
+
+                <i class="fa-solid fa-trophy"></i>
+
+                <h3>5</h3>
+
+                <p>Interview Calls</p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- ================= CAREER GOAL ================= -->
+
+    <section class="career-goal">
+
+        <h2>
+
+            <i class="fa-solid fa-bullseye"></i>
+
+            Career Goal
+
+        </h2>
+
+        <textarea rows="6"
+        placeholder="Write your career objective here...">
+To obtain a Software Developer position where I can use my programming skills, learn new technologies, and contribute to the organization's success.
+        </textarea>
+
+    </section>
+
+    <!-- ================= SAVE BUTTON ================= -->
+
+    <div class="save-section">
+
+        <button class="save-btn">
+
+            <i class="fa-solid fa-floppy-disk"></i>
+
+            Save Profile
+
+        </button>
+
+    </div>
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer>
+
+        <p>
+
+            © 2026 AI Job Portal | Developed for Diploma Final Year Project
+
+        </p>
+
+    </footer>
+
+</div>
+
+<script src="{% static 'js/profile.js' %}"></script>
+
+</body>
+
+</html>

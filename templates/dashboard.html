@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>AI Job Portal | Dashboard</title>
+<link rel="stylesheet" href="{% static 'css/dashboard.css' %}">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+</head>
+
+<body>
+
+<!-- ================= SIDEBAR ================= -->
+
+<div class="sidebar">
+
+    <div class="logo">
+
+        <i class="fa-solid fa-briefcase"></i>
+
+        <h2>AI Job Portal</h2>
+
+    </div>
+
+    <ul>
+
+        <li class="active">
+
+            <a href="{% url 'dashboard' %}">
+
+                <i class="fa-solid fa-house"></i>
+
+                Dashboard
+
+            </a>
+
+        </li>
+
+        <li>
+
+            <a href="{% url 'jobs' %}">
+
+                <i class="fa-solid fa-briefcase"></i>
+
+                 Browse Jobs
+
+            </a>
+
+        </li>
+
+        <li>
+
+            <a href="{% url 'profile' %}">
+
+                <i class="fa-solid fa-user"></i>
+
+                My Profile
+
+            </a>
+
+        </li>
+
+        <li>
+
+           <li>
+            <a href="{% url 'improve_resume' %}">
+        <i class="fa-solid fa-file"></i>
+                Resume
+            </a>
+        </li>
+
+        </li>
+
+        <li>
+
+            <a href="{% url 'saved_jobs' %}">
+
+                <i class="fa-solid fa-bookmark"></i>
+
+                Saved Jobs
+
+            </a>
+
+        </li>
+
+        <li>
+
+            <a href="{% url 'logout' %}">
+                <i class="fa-solid fa-right-from-bracket"></i>
+                    Logout
+            </a>
+
+        </li>
+
+    </ul>
+
+</div>
+
+<!-- ================= MAIN CONTENT ================= -->
+
+<div class="main">
+
+    <!-- Top Bar -->
+
+    <div class="topbar">
+
+        <h1>Dashboard</h1>
+
+        <div class="profile">
+
+<img src="{% static 'images/user1.avif' %}" alt="User">
+
+            <span>Welcome, {{ request.session.user_name }}</span>
+
+        </div>
+
+    </div>
+
+    <!-- Welcome Banner -->
+
+    <section class="welcome">
+
+        <div class="welcome-text">
+
+            <h2>Welcome {{ username }} 👋</h2>
+
+            <h2>My Applied Jobs</h2>
+
+{% for app in applications %}
+
+<div class="job-card">
+
+    <h3>{{ app.job.title }}</h3>
+
+    <p>
+        Company: {{ app.job.company }}
+    </p>
+
+    <p>
+        Location: {{ app.job.location }}
+    </p>
+
+    <p>
+        Salary: {{ app.job.salary }}
+    </p>
+
+    <p>
+        Status: {{ app.status }}
+    </p>
+
+</div>
+
+{% empty %}
+
+<p>You have not applied for any jobs yet.</p>
+
+{% endfor %}
+
+            <p>
+
+                Find your dream career using AI-powered job recommendations.
+
+            </p>
+
+            <a href="{% url 'jobs' %}" class="btn">
+                Browse Jobs
+            </a>
+
+        </div>
+
+       <img src="{% static 'images/dashboard-banner.jfif' %}" alt="Dashboard Banner">
+
+    </section>
+
+    <!-- Dashboard Cards -->
+
+    <section class="cards">
+
+        <div class="card">
+
+            <i class="fa-solid fa-briefcase"></i>
+
+            <h2>120</h2>
+
+            <p>Available Jobs</p>
+
+        </div>
+
+        <div class="card">
+
+            <i class="fa-solid fa-paper-plane"></i>
+
+            <h2>18</h2>
+
+            <p>Applied Jobs</p>
+
+        </div>
+
+        <div class="card">
+
+            <i class="fa-solid fa-bookmark"></i>
+
+            <h2>15</h2>
+
+            <p>Saved Jobs</p>
+
+        </div>
+
+        <div class="card">
+
+            <i class="fa-solid fa-star"></i>
+
+            <h2>92%</h2>
+
+            <p>Resume Score</p>
+
+        </div>
+
+    </section>
+
+    <!-- AI Recommended Jobs -->
+
+    <section class="recommendation">
+
+        <h2>AI Recommended Jobs</h2>
+
+        <div class="job-grid">
+
+            <div class="job-card">
+
+                <h3>Frontend Developer</h3>
+
+                <p>Google • Pune</p>
+
+                <a href="{% url 'jobs' %}">
+                    Apply
+                </a>
+
+            </div>
+
+            <div class="job-card">
+
+                <h3>Python Developer</h3>
+
+                <p>Microsoft • Mumbai</p>
+
+                <a href="{% url 'jobs' %}">
+                    Apply
+                </a> 
+
+            </div>
+
+            <div class="job-card">
+
+                <h3>Java Developer</h3>
+
+                <p>Amazon • Bangalore</p>
+
+                <a href="{% url 'jobs' %}">
+                    Apply
+                </a>    
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- Recent Applications -->
+
+    <section class="table-section">
+
+        <h2>Recent Applications</h2>
+
+        <table>
+
+            <thead>
+
+                <tr>
+
+                    <th>Company</th>
+
+                    <th>Job Role</th>
+
+                    <th>Status</th>
+
+                </tr>
+
+            </thead>
+
+            <tbody>
+
+                <tr>
+
+                    <td>Google</td>
+
+                    <td>Frontend Developer</td>
+
+                    <td><span class="pending">Pending</span></td>
+
+                </tr>
+
+                <tr>
+
+                    <td>Microsoft</td>
+
+                    <td>Python Developer</td>
+
+                    <td><span class="selected">Selected</span></td>
+
+                </tr>
+
+                <tr>
+
+                    <td>Amazon</td>
+
+                    <td>Java Developer</td>
+
+                    <td><span class="review">Under Review</span></td>
+
+                </tr>
+
+            </tbody>
+
+        </table>
+
+    </section>
+
+    <!-- Notifications -->
+
+    <section class="notifications">
+
+        <h2>Notifications</h2>
+
+        <ul>
+
+            <li>🎉 Google shortlisted your profile.</li>
+
+            <li>📄 Update your resume to improve AI score.</li>
+
+            <li>💼 12 new jobs match your skills.</li>
+
+        </ul>
+
+    </section>
+
+</div>
+
+<script src="{% static 'js/dashboard.js' %}"></script>
+
+</body>
+
+</html>

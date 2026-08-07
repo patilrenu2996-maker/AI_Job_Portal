@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>AI Job Portal | Browse Jobs</title>
+
+    <link rel="stylesheet" href="{% static 'css/jobs.css' %}">
+
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+</head>
+
+<body>
+
+<!-- ================= SIDEBAR ================= -->
+
+<div class="sidebar">
+
+    <div class="logo">
+
+        <i class="fa-solid fa-briefcase"></i>
+
+        <h2>AI Job Portal</h2>
+
+    </div>
+
+    <ul>
+
+        <li>
+
+            <a href="{% url 'dashboard' %}">
+
+                <i class="fa-solid fa-house"></i>
+
+                Dashboard
+
+            </a>
+
+        </li>
+
+        <li class="active">
+
+            <a href="{% url 'jobs' %}">
+
+                <i class="fa-solid fa-briefcase"></i>
+
+                Browse Jobs
+
+            </a>
+
+        </li>
+
+        <li>
+
+            <a href="{% url 'profile' %}">
+
+                <i class="fa-solid fa-user"></i>
+
+                My Profile
+
+            </a>
+
+        </li>
+
+        <li>
+
+            <a href="#">
+
+                <i class="fa-solid fa-bookmark"></i>
+
+                Saved Jobs
+
+            </a>
+
+        </li>
+
+        <li>
+
+            <a href="index.html">
+
+                <i class="fa-solid fa-right-from-bracket"></i>
+
+                Logout
+
+            </a>
+
+        </li>
+
+    </ul>
+
+</div>
+
+<!-- ================= MAIN CONTENT ================= -->
+
+<div class="main">
+
+    <!-- ================= HEADER ================= -->
+
+    <div class="header">
+
+        <h1>Browse Jobs</h1>
+
+        <div class="profile">
+
+            <img src="{% static 'images/user1.avif' %}" alt="User">
+
+            <span>Welcome, {{ request.session.user_name }}</span>
+
+        </div>
+
+    </div>
+
+    <!-- ================= SEARCH SECTION ================= -->
+
+    <section class="search-section">
+
+    <h2>Find Your Dream Job</h2>
+
+    <form class="search-box" action="{% url 'search_jobs' %}" method="GET">
+
+        <input
+        type="text"
+        name="job"
+        placeholder="Job Title">
+
+        <input
+        type="text"
+        name="location"
+        placeholder="Location">
+
+        <button type="submit">
+
+            <i class="fa-solid fa-magnifying-glass"></i>
+
+            Search
+
+        </button>
+
+    </form>
+
+</section>
+    <!-- ================= FILTER SECTION ================= -->
+
+    <form method="GET" action="{% url 'jobs' %}" class="filters">
+
+    <select name="experience">
+        <option value="">Experience</option>
+        <option value="Fresher">Fresher</option>
+        <option value="1-2 Years">1-2 Years</option>
+        <option value="3-5 Years">3-5 Years</option>
+        <option value="5+ Years">5+ Years</option>
+    </select>
+
+    <select name="skills">
+        <option value="">Skills</option>
+        <option value="HTML, CSS, JavaScript">HTML, CSS, JavaScript</option>
+        <option value="Python, Django, SQL">Python, Django, SQL</option>
+        <option value="Excel, SQL, Power BI">Excel, SQL, Power BI</option>
+        <option value="Python, Django">Python, Django</option>
+        <option value="Java, Spring Boot, MySQL">Java, Spring Boot, MySQL</option>
+        <option value="React">React</option>
+    </select>
+
+    <select name="job_type">
+        <option value="">Job Type</option>
+        <option value="Full Time">Full Time</option>
+        <option value="Internship">Internship</option>
+    </select>
+
+    <button type="submit" class="filter-btn">
+        Apply Filter
+    </button>
+
+</form>
+
+    <!-- ================= JOB CARDS ================= -->
+
+   <section class="jobs">
+
+{% for job in jobs %}
+
+<div class="job-card">
+
+    <div class="company">
+        <i class="fa-solid fa-building fa-2x"></i>
+    </div>
+
+    <h3>{{ job.title }}</h3>
+
+    <p>Job ID: {{ job.id }}</p>
+
+    <p>
+        <i class="fa-solid fa-building"></i>
+        {{ job.company }}
+    </p>
+
+    <p>
+        <i class="fa-solid fa-location-dot"></i>
+        {{ job.location }}
+    </p>
+
+    <p>
+        <i class="fa-solid fa-indian-rupee-sign"></i>
+        {{ job.salary }}
+    </p>
+
+    <p>
+        <i class="fa-solid fa-briefcase"></i>
+        <strong>Experience:</strong> {{ job.experience }}
+    </p>
+
+    <p>
+        <i class="fa-solid fa-code"></i>
+        <strong>Skills:</strong> {{ job.skills }}
+    </p>
+
+    <p>
+        <i class="fa-solid fa-user-tie"></i>
+        <strong>Job Type:</strong> {{ job.job_type }}
+    </p>
+
+    <p class="job-description">{{ job.description }}</p>
+
+    <div class="buttons">
+
+        <button class="details-btn"
+            onclick="showDetails(
+            '{{ job.id }}',
+            '{{ job.title }}',
+            '{{ job.company }}',
+            '{{ job.location }}',
+            '{{ job.salary }}',
+            '{{ job.experience }}',
+            '{{ job.skills }}',
+            '{{ job.job_type }}',
+            '{{ job.description }}'
+            )">
+            Details
+        </button>
+
+        <a href="{% url 'apply_job' job.id %}">
+            <button class="apply-btn">
+                Apply Now
+            </button>
+        </a>
+
+        <a href="{% url 'save_job' job.id %}">
+            <button class="save-btn">
+                ❤️ Save
+            </button>
+        </a>
+
+    </div>
+
+</div>   
+
+{% empty %}
+
+<h2>No Jobs Available</h2>
+
+{% endfor %}
+
+</section>   
+
+    <!-- ================= JOB DETAILS POPUP ================= -->
+
+    <div class="popup" id="jobPopup">
+
+        <div class="popup-content">
+
+            <span class="close-btn" onclick="closePopup()">&times;</span>
+
+            <h2 id="popupTitle"></h2>
+
+            <p>
+            <strong>Company:</strong>
+            <span id="popupCompany"></span>
+            </p>
+
+            <p>
+            <strong>Location:</strong>
+            <span id="popupLocation"></span>
+            </p>
+
+            <p>
+            <strong>Salary:</strong>
+            <span id="popupSalary"></span>
+            </p>
+
+            <p id="popupDescription"></p>
+           
+           <a id="popupApply">
+                <button class="apply-btn">
+                   Apply Now
+                </button>
+           </a>
+
+        </div>
+
+    </div>
+
+    <!-- ================= AI CAREER TIPS ================= -->
+
+    <section class="tips">
+
+        <h2>AI Career Tips</h2>
+
+        <div class="tips-container">
+
+            <div class="tip-card">
+
+                <i class="fa-solid fa-robot"></i>
+
+                <h3>Improve Your Resume</h3>
+                <p>
+                    Add relevant technical skills and projects
+                    to increase your AI Resume Score.
+                </p>
+
+            </div>
+
+            <div class="tip-card">
+
+                <i class="fa-solid fa-lightbulb"></i>
+
+                <h3>Learn New Skills</h3>
+
+                <p>
+                    Stay updated with AI, Python,
+                    JavaScript and Cloud technologies.
+                </p>
+
+            </div>
+
+            <div class="tip-card">
+
+                <i class="fa-solid fa-chart-line"></i>
+
+                <h3>Track Applications</h3>
+
+                <p>
+                    Monitor your applied jobs
+                    and improve your interview success.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer>
+
+        <p>
+
+            © 2026 AI Job Portal | All Rights Reserved.
+
+        </p>
+
+    </footer>
+
+</div>
+
+<script>
+
+function showDetails(id, title, company, location, salary, description){
+
+    document.getElementById("jobPopup").style.display = "block";
+
+    document.getElementById("popupTitle").innerHTML = title;
+    document.getElementById("popupCompany").innerHTML = company;
+    document.getElementById("popupLocation").innerHTML = location;
+    document.getElementById("popupSalary").innerHTML = salary;
+    document.getElementById("popupDescription").innerHTML = description;
+
+
+    document.getElementById("popupApply").href = "/apply/" + id + "/";
+}
+function closePopup() {
+
+    document.getElementById("jobPopup").style.display = "none";
+
+}
+</script>
+
+</body>
+
+</html>

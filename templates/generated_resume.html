@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Generated Resume</title>
+
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/generated_resume.css' %}">
+</head>
+<body>
+
+<div class="resume-container">
+
+    <div class="header">
+
+        <h1>{{ user.name }}</h1>
+
+        <p>{{ user.email }}</p>
+
+        <p>{{ user.phone }}</p>
+
+    </div>
+
+
+    <div class="section">
+
+        <h2>Professional Summary</h2>
+
+        <p>
+            Motivated Computer Engineering student with experience in Python,
+            Django, SQL and AI applications. Passionate about developing
+            intelligent web applications and solving real-world problems.
+        </p>
+
+    </div>
+
+
+
+    <div class="section">
+
+        <h2>Technical Skills</h2>
+
+        <ul>
+
+            <li>Python</li>
+
+            <li>Django</li>
+
+            <li>HTML & CSS</li>
+
+            <li>JavaScript</li>
+
+            <li>SQL</li>
+
+            <li>Machine Learning</li>
+
+        </ul>
+
+    </div>
+
+
+
+
+    <div class="section">
+
+        <h2>Projects</h2>
+
+        <ul>
+
+            <li>AI Job Portal using Django</li>
+
+            <li>Quiz Management System</li>
+
+        </ul>
+
+    </div>
+
+
+
+
+
+    <div class="section">
+
+        <h2>Education</h2>
+
+        <p>
+            Bachelor of Engineering (Computer Engineering)
+        </p>
+
+    </div>
+
+
+
+
+    <div class="section">
+
+        <h2>AI Improvements</h2>
+
+        <ul>
+
+            <li>✔ Added professional summary</li>
+
+            <li>✔ ATS Friendly Keywords Added</li>
+
+            <li>✔ Improved Project Description</li>
+
+            <li>✔ Better Resume Formatting</li>
+
+        </ul>
+
+    </div>
+
+
+
+
+    <a href="{% url 'download_improved_resume' %}">
+    <button class="download-btn">
+        Download Improved Resume
+    </button>
+    </a>
+
+    </div>
+
+</div>
+
+</body>
+</html>

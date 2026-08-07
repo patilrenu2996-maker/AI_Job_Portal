@@ -1,0 +1,75 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <title>Saved Jobs</title>
+
+    <link rel="stylesheet" href="{% static 'css/saved_jobs.css' %}">
+
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+</head>
+
+<body>
+
+<div class="saved-container">
+
+    <h1 class="saved-title">
+        ❤️ Saved Jobs
+    </h1>
+
+    <div class="jobs-grid">
+
+        {% for item in saved_jobs %}
+
+        <div class="job-card">
+
+            <h2>{{ item.job.title }}</h2>
+
+            <p><i class="fa-solid fa-building"></i> {{ item.job.company }}</p>
+
+            <p><i class="fa-solid fa-location-dot"></i> {{ item.job.location }}</p>
+
+            <p><i class="fa-solid fa-indian-rupee-sign"></i> {{ item.job.salary }}</p>
+
+            <div class="job-buttons">
+
+                <button class="view-btn">
+                    View Details
+                </button>
+
+                <button class="remove-btn">
+                    Remove
+                </button>
+
+            </div>
+
+        </div>
+
+        {% empty %}
+
+        <div class="empty-box">
+
+            <i class="fa-solid fa-bookmark"></i>
+
+            <h2>No Saved Jobs Yet</h2>
+
+            <p>Save your favorite jobs to see them here.</p>
+
+        </div>
+
+        {% endfor %}
+
+    </div>
+
+</div>
+
+</body>
+
+</html>
