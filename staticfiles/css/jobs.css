@@ -1,0 +1,586 @@
+/*====================================================
+        AI JOB PORTAL - JOBS PAGE CSS
+======================================================*/
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    background:#eef2ff;
+    color:#333;
+}
+
+/*====================================================
+                    SIDEBAR
+======================================================*/
+
+.sidebar{
+    position:fixed;
+    top:0;
+    left:0;
+    width:260px;
+    height:100vh;
+    background:linear-gradient(180deg,#2563eb,#4f46e5,#7c3aed);
+    color:#fff;
+    box-shadow:5px 0 20px rgba(0,0,0,.15);
+    overflow-y:auto;
+}
+
+.logo{
+    text-align:center;
+    padding:30px 20px;
+    border-bottom:1px solid rgba(255,255,255,.2);
+}
+
+.logo i{
+    font-size:45px;
+    margin-bottom:10px;
+}
+
+.logo h2{
+    font-size:28px;
+}
+
+.sidebar ul{
+    list-style:none;
+    padding:20px;
+}
+
+.sidebar ul li{
+    margin-bottom:10px;
+}
+
+.sidebar ul li a{
+    display:flex;
+    align-items:center;
+    gap:15px;
+    text-decoration:none;
+    color:#fff;
+    padding:15px;
+    border-radius:12px;
+    transition:.3s;
+}
+
+.sidebar ul li a:hover,
+.sidebar ul li.active a{
+    background:rgba(255,255,255,.18);
+    transform:translateX(5px);
+}
+
+/*====================================================
+                    MAIN CONTENT
+======================================================*/
+
+.main{
+    margin-left:260px;
+    padding:35px;
+}
+
+/*====================================================
+                      HEADER
+======================================================*/
+
+.header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:30px;
+}
+
+.header h1{
+    font-size:34px;
+    color:#1e3a8a;
+}
+
+/*====================================================
+                USER PROFILE
+======================================================*/
+
+.profile{
+    display:flex;
+    align-items:center;
+    gap:15px;
+}
+
+.profile img{
+    width:50px;
+    height:50px;
+    border-radius:50%;
+    object-fit:cover;
+    border:3px solid #4f46e5;
+}
+
+.profile span{
+    font-weight:600;
+    color:#1e3a8a;
+}
+
+/*====================================================
+                SEARCH SECTION
+======================================================*/
+
+.search-section{
+    background:#fff;
+    padding:30px;
+    border-radius:20px;
+    margin-bottom:30px;
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+}
+
+.search-section h2{
+    color:#1e3a8a;
+    margin-bottom:25px;
+}
+
+.search-box{
+    display:flex;
+    gap:15px;
+    flex-wrap:wrap;
+}
+
+.search-box input{
+    flex:1;
+    min-width:220px;
+    padding:15px;
+    border:1px solid #ddd;
+    border-radius:12px;
+    outline:none;
+    font-size:15px;
+    transition:.3s;
+}
+
+.search-box input:focus{
+    border-color:#4f46e5;
+}
+
+.search-box button{
+    padding:15px 25px;
+    border:none;
+    border-radius:12px;
+    background:#2563eb;
+    color:#fff;
+    cursor:pointer;
+    transition:.3s;
+    font-size:15px;
+}
+
+.search-box button:hover{
+    background:#1d4ed8;
+}
+
+/*====================================================
+                    FILTERS
+======================================================*/
+
+.filters{
+    display:flex;
+    gap:15px;
+    flex-wrap:wrap;
+    margin-bottom:35px;
+}
+
+.filters select{
+    flex:1;
+    min-width:180px;
+    padding:15px;
+    border:1px solid #ddd;
+    border-radius:12px;
+    outline:none;
+    background:#fff;
+}
+
+.filter-btn{
+    padding:15px 25px;
+    background:#4f46e5;
+    color:#fff;
+    border:none;
+    border-radius:12px;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.filter-btn:hover{
+    background:#3730a3;
+}
+
+/*====================================================
+                    JOB CARDS
+======================================================*/
+
+.jobs{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+    gap:25px;
+}
+
+.job-card{
+background:#fff;
+border-radius:20px;
+padding:25px;
+box-shadow:0 10px 25px rgba(0,0,0,.08);
+transition:.3s;
+animation:fadeUp .6s ease;
+}
+
+.job-card:hover{
+    transform:translateY(-8px);
+    box-shadow:0 18px 35px rgba(37,99,235,.18);
+}
+
+.company{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    width:70px;
+    height:70px;
+    margin:0 auto 20px;
+    border-radius:50%;
+    background:#eef2ff;
+}
+
+.company i{
+    font-size:32px;
+    color:#2563eb;
+}
+
+.job-card h3{
+    text-align:center;
+    color:#1e3a8a;
+    margin-bottom:15px;
+    font-size:22px;
+}
+
+.job-card p{
+    margin:10px 0;
+    color:#555;
+    line-height:1.6;
+}
+
+.job-card p i{
+    color:#4f46e5;
+    width:22px;
+}
+
+.job-description{
+    font-size: 14px;
+    color: #6b7280;
+    line-height: 1.6;
+    margin: 12px 0;
+    padding-top: 8px;
+    border-top: 1px solid #e5e7eb;
+}
+/*====================================================
+                    BUTTONS
+======================================================*/
+
+.buttons{
+    display:flex;
+    gap:15px;
+    margin-top:25px;
+}
+
+.details-btn,
+.apply-btn{
+    flex:1;
+    padding:13px;
+    border:none;
+    border-radius:10px;
+    cursor:pointer;
+    font-size:15px;
+    font-weight:600;
+    transition:.3s;
+}
+
+.details-btn{
+    background:#eef2ff;
+    color:#1e3a8a;
+}
+
+.details-btn:hover{
+    background:#dbeafe;
+}
+
+.apply-btn{
+    background:#2563eb;
+    color:white;
+}
+
+.apply-btn:hover{
+    background:#1d4ed8;
+}
+
+/*====================================================
+                    POPUP
+======================================================*/
+
+.popup{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,.55);
+    display:none;
+    justify-content:center;
+    align-items:center;
+    z-index:1000;
+}
+
+.popup-content{
+    width:90%;
+    max-width:550px;
+    background:white;
+    border-radius:20px;
+    padding:35px;
+    position:relative;
+    animation:popup .35s ease;
+    box-shadow:0 20px 40px rgba(0,0,0,.2);
+}
+
+.popup-content h2{
+    color:#1e3a8a;
+    margin-bottom:20px;
+}
+
+.popup-content p{
+    margin:12px 0;
+    color:#555;
+    line-height:1.7;
+}
+
+.close-btn{
+    position:absolute;
+    top:15px;
+    right:20px;
+    font-size:30px;
+    color:#ef4444;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.close-btn:hover{
+    transform:rotate(90deg);
+}
+
+/*====================================================
+                    AI TIPS
+======================================================*/
+
+.tips{
+    margin-top:60px;
+}
+
+.tips h2{
+    text-align:center;
+    color:#1e3a8a;
+    margin-bottom:30px;
+}
+
+.tips-container{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:25px;
+}
+
+.tip-card{
+    background:white;
+    padding:30px;
+    border-radius:20px;
+    text-align:center;
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+    transition:.3s;
+}
+
+.tip-card:hover{
+    transform:translateY(-10px);
+}
+
+.tip-card i{
+    font-size:50px;
+    color:#4f46e5;
+    margin-bottom:20px;
+}
+
+.tip-card h3{
+    color:#1e3a8a;
+    margin-bottom:15px;
+}
+
+.tip-card p{
+    color:#666;
+    line-height:1.7;
+}
+
+/*====================================================
+                    FOOTER
+======================================================*/
+
+footer{
+    margin-top:60px;
+    background:linear-gradient(90deg,#2563eb,#4f46e5);
+    color:white;
+    text-align:center;
+    padding:20px;
+    border-radius:15px;
+}
+
+/*====================================================
+                    SCROLLBAR
+======================================================*/
+
+::-webkit-scrollbar{
+    width:8px;
+}
+
+::-webkit-scrollbar-track{
+    background:#eef2ff;
+}
+
+::-webkit-scrollbar-thumb{
+    background:#4f46e5;
+    border-radius:10px;
+}
+
+::-webkit-scrollbar-thumb:hover{
+    background:#3730a3;
+}
+
+/*====================================================
+                    ANIMATIONS
+======================================================*/
+
+@keyframes fadeUp{
+    from{
+        opacity:0;
+        transform:translateY(25px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+@keyframes popup{
+    from{
+        opacity:0;
+        transform:scale(.8);
+    }
+    to{
+        opacity:1;
+        transform:scale(1);
+    }
+}
+
+/*====================================================
+                    RESPONSIVE
+======================================================*/
+
+@media(max-width:992px){
+
+.sidebar{
+    width:220px;
+}
+
+.main{
+    margin-left:220px;
+}
+
+}
+
+@media(max-width:768px){
+
+.sidebar{
+    position:relative;
+    width:100%;
+    height:auto;
+}
+
+.main{
+    margin-left:0;
+    padding:20px;
+}
+
+.header{
+    flex-direction:column;
+    align-items:flex-start;
+    gap:20px;
+}
+
+.search-box,
+.filters,
+.buttons{
+    flex-direction:column;
+}
+
+.search-box input,
+.search-box button,
+.filters select,
+.filter-btn,
+.details-btn,
+.apply-btn{
+    width:100%;
+}
+
+.jobs{
+    grid-template-columns:1fr;
+}
+
+.popup-content{
+    padding:25px;
+}
+
+}
+
+@media(max-width:576px){
+
+.header h1{
+    font-size:28px;
+}
+
+.search-section,
+.job-card,
+.tip-card{
+    padding:20px;
+}
+
+.company{
+    width:60px;
+    height:60px;
+}
+
+.company i{
+    font-size:28px;
+}
+
+.popup-content h2{
+    font-size:24px;
+}
+
+footer{
+    font-size:14px;
+}
+
+}
+
+.save-btn{
+    flex:1;
+    padding:13px;
+    border:none;
+    border-radius:10px;
+    cursor:pointer;
+    font-size:15px;
+    font-weight:600;
+    background:#f59e0b;
+    color:white;
+    transition:.3s;
+}
+
+.save-btn:hover{
+    background:#d97706;
+}

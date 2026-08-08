@@ -1,0 +1,211 @@
+/* AI Resume Improvement Page */
+
+body {
+    background: #f5f7fb;
+    font-family: 'Poppins', sans-serif;
+}
+
+
+/* Main Container */
+
+.container {
+    width: 85%;
+    margin: 40px auto;
+}
+
+
+/* Heading */
+
+.container h1 {
+    text-align: center;
+    color: #2563eb;
+    font-size: 32px;
+    margin-bottom: 30px;
+}
+
+
+
+/* Cards */
+
+.card {
+    background: white;
+    padding: 25px;
+    margin: 25px 0;
+    border-radius: 18px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+    transition: 0.3s;
+}
+
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 25px rgba(37,99,235,0.15);
+}
+
+
+
+.card h2 {
+
+    color: #1e40af;
+    font-size: 22px;
+    margin-bottom: 15px;
+
+}
+
+
+
+/* Resume Details */
+
+.card p {
+
+    color: #555;
+    font-size: 16px;
+
+}
+
+
+
+/* AI Score Circle */
+
+
+.score-box {
+    text-align: center;
+}
+
+
+
+.score {
+
+    width:150px;
+    height:150px;
+
+    margin:20px auto;
+
+    border-radius:50%;
+
+    background: linear-gradient(135deg,#2563eb,#7c3aed);
+
+    color:white;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    font-size:38px;
+    font-weight:bold;
+
+    box-shadow:0 10px 25px rgba(37,99,235,0.35);
+
+}
+
+
+
+/* Lists */
+
+.card ul {
+
+    padding-left:20px;
+
+}
+
+
+.card li {
+
+    margin:12px 0;
+    color:#444;
+    font-size:16px;
+
+}
+
+
+
+.card li::marker {
+
+    color:#2563eb;
+
+}
+
+
+
+/* Buttons */
+
+
+.improve-btn {
+
+    background: linear-gradient(135deg,#2563eb,#7c3aed);
+
+    color:white;
+
+    border:none;
+
+    padding:12px 25px;
+
+    border-radius:10px;
+
+    font-size:15px;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+    margin:8px;
+
+    transition:0.3s;
+
+}
+
+
+
+.improve-btn:hover {
+
+    transform:scale(1.05);
+
+    box-shadow:0 8px 18px rgba(124,58,237,0.35);
+
+}
+
+
+
+/* Generate Button */
+
+
+.generate-btn {
+
+    background:#16a34a;
+
+}
+
+
+.generate-btn:hover {
+
+    background:#15803d;
+
+}
+
+
+
+/* Responsive */
+
+@media(max-width:768px){
+
+    .container{
+
+        width:95%;
+
+    }
+
+
+    .card{
+
+        padding:18px;
+
+    }
+
+
+    .container h1{
+
+        font-size:25px;
+
+    }
+
+}

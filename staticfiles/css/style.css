@@ -1,0 +1,433 @@
+/*=========================================
+ AI Job Portal - Home Page
+ Modern UI Design
+=========================================*/
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+    scroll-behavior:smooth;
+}
+
+body{
+    background:#f4f7ff;
+    color:#333;
+}
+
+img{
+    max-width:100%;
+    display:block;
+}
+
+a{
+    text-decoration:none;
+}
+
+ul{
+    list-style:none;
+}
+
+section{
+    padding:80px 8%;
+}
+
+h2{
+    text-align:center;
+    font-size:36px;
+    color:#1e3a8a;
+    margin-bottom:45px;
+}
+
+/*==========================
+ NAVBAR
+==========================*/
+
+header{
+    position:sticky;
+    top:0;
+    z-index:1000;
+    background:#fff;
+    box-shadow:0 5px 20px rgba(0,0,0,.08);
+}
+
+.navbar{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:18px 8%;
+}
+
+.logo{
+    display:flex;
+    align-items:center;
+    gap:10px;
+}
+
+.logo i{
+    font-size:34px;
+    color:#2563eb;
+}
+
+.logo h2{
+    margin:0;
+    font-size:28px;
+    color:#1e3a8a;
+}
+
+.nav-links{
+    display:flex;
+    gap:30px;
+}
+
+.nav-links a{
+    color:#333;
+    font-weight:500;
+    transition:.3s;
+}
+
+.nav-links a:hover{
+    color:#2563eb;
+}
+
+.login-btn{
+    background:#2563eb;
+    color:#fff;
+    padding:12px 28px;
+    border-radius:30px;
+    transition:.3s;
+}
+
+.login-btn:hover{
+    background:#1d4ed8;
+}
+
+/*==========================
+ HERO
+==========================*/
+
+.hero{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:50px;
+    min-height:90vh;
+}
+
+.hero-content{
+    flex:1;
+    background:#eef4ff;
+}
+
+.hero-content h1{
+    font-size:55px;
+    color:#1e3a8a;
+    margin-bottom:20px;
+}
+
+.hero-content p{
+    color:#555;
+    margin-bottom:30px;
+    font-size:18px;
+}
+
+.btn{
+    display:inline-block;
+    padding:14px 32px;
+    background:#2563eb;
+    color:#fff;
+    border-radius:35px;
+    transition:.3s;
+}
+
+.btn:hover{
+    background:#1d4ed8;
+    transform:translateY(-4px);
+}
+
+.hero-image{
+    flex:1;
+    animation:float 3s ease-in-out infinite;
+}
+
+/*==========================
+ SEARCH
+==========================*/
+
+.search{
+    background:#eef4ff;
+}
+
+.search-box{
+    display:flex;
+    gap:15px;
+    justify-content:center;
+    flex-wrap:wrap;
+}
+
+.search-box input{
+    padding:15px;
+    width:280px;
+    border:none;
+    border-radius:10px;
+    box-shadow:0 5px 12px rgba(0,0,0,.08);
+    outline:none;
+}
+
+.search-box button{
+    background:#2563eb;
+    color:#fff;
+    border:none;
+    padding:15px 30px;
+    border-radius:10px;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.search-box button:hover{
+    background:#1d4ed8;
+}
+
+/*==========================
+ CARDS
+==========================*/
+
+.company-container,
+.feature-container,
+.job-container,
+.step-container{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:30px;
+    background:#eef4ff;
+}
+
+.company-card,
+.feature-card,
+.job-card,
+.step,
+.testimonial-card{
+    background:rgba(255,255,255,.75);
+    backdrop-filter:blur(15px);
+    padding:30px;
+    border-radius:18px;
+    text-align:center;
+    box-shadow:0 10px 30px rgba(0,0,0,.08);
+    transition:.4s;
+}
+
+.company-card:hover,
+.feature-card:hover,
+.job-card:hover,
+.step:hover,
+.testimonial-card:hover{
+    transform:translateY(-10px);
+}
+
+.company-card img{
+    width:80px;
+    margin:auto;
+    margin-bottom:15px;
+}
+
+.feature-card i{
+    font-size:55px;
+    color:#2563eb;
+    margin-bottom:20px;
+}
+
+.step h3{
+    width:70px;
+    height:70px;
+    margin:auto;
+    border-radius:50%;
+    background:#2563eb;
+    color:#fff;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:28px;
+    margin-bottom:15px;
+}
+
+.job-card a{
+    display:inline-block;
+    margin-top:15px;
+    padding:10px 20px;
+    background:#2563eb;
+    color:#fff;
+    border-radius:25px;
+}
+
+.job-card a:hover{
+    background:#1d4ed8;
+}
+
+/*==========================
+ TESTIMONIAL
+==========================*/
+
+.testimonial{
+    background:#eef4ff;
+}
+
+.testimonial-card{
+    max-width:700px;
+    margin:auto;
+}
+
+/*==========================
+ CONTACT
+==========================*/
+
+#contact{
+    text-align:center;
+}
+
+#contact p{
+    margin:10px 0;
+    font-size:18px;
+}
+
+/*==========================
+ FOOTER
+==========================*/
+
+footer{
+    background:#1e3a8a;
+    color:#fff;
+    text-align:center;
+    padding:20px;
+}
+
+/*==========================
+ ANIMATIONS
+==========================*/
+
+@keyframes float{
+
+    0%{
+        transform:translateY(0);
+    }
+
+    50%{
+        transform:translateY(-15px);
+    }
+
+    100%{
+        transform:translateY(0);
+    }
+
+}
+
+/*==========================
+ RESPONSIVE
+==========================*/
+
+@media(max-width:992px){
+
+.hero{
+    flex-direction:column-reverse;
+    text-align:center;
+}
+
+.hero-content h1{
+    font-size:42px;
+}
+
+}
+
+@media(max-width:768px){
+
+.navbar{
+    flex-direction:column;
+    gap:20px;
+}
+
+.nav-links{
+    flex-wrap:wrap;
+    justify-content:center;
+}
+
+.hero-content h1{
+    font-size:34px;
+}
+
+h2{
+    font-size:30px;
+}
+
+section{
+    padding:60px 5%;
+}
+
+.search-box input{
+    width:100%;
+}
+
+.search-box button{
+    width:100%;
+}
+
+}
+
+@media(max-width:480px){
+
+.hero-content h1{
+    font-size:28px;
+}
+
+.logo h2{
+    font-size:22px;
+}
+
+.login-btn{
+    padding:10px 20px;
+}
+
+}
+
+/*==========================
+ ABOUT SECTION
+==========================*/
+
+.about-section{
+    background:#eef4ff;
+    padding:80px 10%;
+    text-align:center;
+}
+
+.about-container{
+    max-width:900px;
+    margin:auto;
+}
+
+.about-container h2{
+    font-size:40px;
+    color:#1e3a8a;
+    margin-bottom:40px;
+    font-weight:bold;
+}
+
+.testimonial-card{
+    background:#ffffff;
+    padding:30px;
+    border-radius:15px;
+    box-shadow:0 5px 15px rgba(0,0,0,0.15);
+    transition:0.3s ease;
+}
+
+.testimonial-card:hover{
+    transform:translateY(-8px);
+    box-shadow:0 10px 25px rgba(0,0,0,0.25);
+}
+
+.testimonial-card p{
+    font-size:18px;
+    color:#555;
+    line-height:30px;
+    text-align:justify;
+}

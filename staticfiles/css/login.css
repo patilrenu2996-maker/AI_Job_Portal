@@ -1,0 +1,457 @@
+/*=========================================
+ AI Job Portal - Login Page
+ Modern Glassmorphism UI
+==========================================*/
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:linear-gradient(135deg,#2563eb,#4f46e5,#7c3aed);
+    overflow:hidden;
+    position:relative;
+}
+
+/*============================
+ Background Circles
+=============================*/
+
+body::before{
+    content:"";
+    position:absolute;
+    width:350px;
+    height:350px;
+    background:rgba(255,255,255,.15);
+    border-radius:50%;
+    top:-120px;
+    left:-120px;
+    filter:blur(30px);
+}
+
+body::after{
+    content:"";
+    position:absolute;
+    width:400px;
+    height:400px;
+    background:rgba(255,255,255,.10);
+    border-radius:50%;
+    bottom:-150px;
+    right:-150px;
+    filter:blur(30px);
+}
+
+/*============================
+ Main Container
+=============================*/
+
+.container{
+    width:1100px;
+    max-width:95%;
+    min-height:680px;
+    display:flex;
+    border-radius:25px;
+    overflow:hidden;
+    background:rgba(255,255,255,.12);
+    backdrop-filter:blur(20px);
+    box-shadow:0 20px 60px rgba(0,0,0,.30);
+    animation:fadeIn .8s ease;
+    z-index:10;
+}
+
+/*============================
+ Left Panel
+=============================*/
+
+.left-panel{
+    width:45%;
+    background:linear-gradient(160deg,#2563eb,#4f46e5,#7c3aed);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    color:#fff;
+    padding:40px;
+}
+
+.overlay{
+    text-align:center;
+    animation:slideLeft 1s ease;
+}
+
+.logo-icon{
+    font-size:70px;
+    margin-bottom:20px;
+}
+
+.overlay h1{
+    font-size:42px;
+    margin-bottom:15px;
+}
+
+.overlay p{
+    font-size:17px;
+    line-height:1.6;
+    margin-bottom:35px;
+}
+
+.overlay img{
+    width:300px;
+    margin:auto;
+    transition:.4s;
+}
+
+.overlay img:hover{
+    transform:scale(1.05);
+}
+
+/*============================
+ Right Panel
+=============================*/
+
+.right-panel{
+    width:55%;
+    padding:45px;
+    overflow-y:auto;
+    background:rgba(255,255,255,.08);
+}
+
+.login-form,
+.register-form{
+    max-width:420px;
+    margin:auto;
+    animation:slideRight 1s ease;
+}
+
+.register-form{
+    margin-top:50px;
+}
+
+.login-form h2,
+.register-form h2{
+    color:#fff;
+    font-size:34px;
+    margin-bottom:10px;
+}
+
+.login-form p,
+.register-form p{
+    color:#e5e7eb;
+    margin-bottom:25px;
+}
+
+/*============================
+ Input Fields
+=============================*/
+
+.input-box{
+    position:relative;
+    margin-bottom:20px;
+}
+
+.input-box input{
+    width:100%;
+    padding:15px 50px;
+    border:none;
+    outline:none;
+    border-radius:50px;
+    background:rgba(255,255,255,.18);
+    color:#fff;
+    font-size:15px;
+    transition:.3s;
+}
+
+.input-box input::placeholder{
+    color:#f3f4f6;
+}
+
+.input-box input:focus{
+    background:rgba(255,255,255,.28);
+    box-shadow:0 0 12px rgba(255,255,255,.25);
+}
+
+.input-box i{
+    position:absolute;
+    left:20px;
+    top:50%;
+    transform:translateY(-50%);
+    color:#fff;
+}
+
+.toggle-password{
+    position:absolute;
+    right:20px;
+    top:50%;
+    transform:translateY(-50%);
+    color:#fff;
+    cursor:pointer;
+}
+
+/*============================
+ Options
+=============================*/
+
+.options{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:20px;
+    color:#fff;
+    font-size:14px;
+}
+
+.options a{
+    color:#fff;
+    text-decoration:none;
+}
+
+.options a:hover{
+    text-decoration:underline;
+}
+
+/*============================
+ Buttons
+=============================*/
+
+button{
+    width:100%;
+    padding:15px;
+    border:none;
+    border-radius:50px;
+    background:#2563eb;
+    color:#fff;
+    font-size:16px;
+    font-weight:600;
+    cursor:pointer;
+    transition:.3s;
+}
+
+button:hover{
+    background:#1d4ed8;
+    transform:translateY(-3px);
+}
+
+/*============================
+ Divider
+=============================*/
+
+.divider{
+    margin:25px 0;
+    text-align:center;
+    color:#fff;
+    position:relative;
+}
+
+.divider::before,
+.divider::after{
+    content:"";
+    position:absolute;
+    top:50%;
+    width:40%;
+    height:1px;
+    background:rgba(255,255,255,.4);
+}
+
+.divider::before{
+    left:0;
+}
+
+.divider::after{
+    right:0;
+}
+
+/*============================
+ Social Login
+=============================*/
+
+.social-login{
+    display:flex;
+    gap:15px;
+    margin-bottom:20px;
+}
+
+.google{
+    background:#ea4335;
+}
+
+.linkedin{
+    background:#0a66c2;
+}
+
+.google:hover{
+    background:#d93025;
+}
+
+.linkedin:hover{
+    background:#004182;
+}
+
+/*============================
+ Switch Text
+=============================*/
+
+.switch-text{
+    color:#fff;
+    text-align:center;
+}
+
+.switch-text a{
+    color:#93c5fd;
+    font-weight:600;
+    text-decoration:none;
+}
+
+.switch-text a:hover{
+    text-decoration:underline;
+}
+
+/*============================
+ Back Button
+=============================*/
+
+.back-btn{
+    display:block;
+    text-align:center;
+    margin-top:30px;
+    color:#fff;
+    text-decoration:none;
+}
+
+.back-btn:hover{
+    color:#bfdbfe;
+}
+
+/*============================
+ Animations
+=============================*/
+
+@keyframes slideLeft{
+
+    from{
+        opacity:0;
+        transform:translateX(-80px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateX(0);
+    }
+
+}
+
+@keyframes slideRight{
+
+    from{
+        opacity:0;
+        transform:translateX(80px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateX(0);
+    }
+
+}
+
+@keyframes fadeIn{
+
+    from{
+        opacity:0;
+        transform:scale(.95);
+    }
+
+    to{
+        opacity:1;
+        transform:scale(1);
+    }
+
+}
+
+/*============================
+ Responsive
+=============================*/
+
+@media(max-width:992px){
+
+.container{
+    flex-direction:column;
+}
+
+.left-panel,
+.right-panel{
+    width:100%;
+}
+
+.overlay img{
+    width:220px;
+}
+
+}
+
+@media(max-width:768px){
+
+.container{
+    width:95%;
+}
+
+.overlay h1{
+    font-size:32px;
+}
+
+.logo-icon{
+    font-size:55px;
+}
+
+.login-form h2,
+.register-form h2{
+    font-size:28px;
+}
+
+.options{
+    flex-direction:column;
+    align-items:flex-start;
+    gap:10px;
+}
+
+.social-login{
+    flex-direction:column;
+}
+
+}
+
+@media(max-width:480px){
+
+body{
+    padding:15px;
+}
+
+.right-panel{
+    padding:25px;
+}
+
+.overlay img{
+    width:180px;
+}
+
+.login-form h2,
+.register-form h2{
+    font-size:24px;
+}
+
+.input-box input{
+    padding:14px 45px;
+}
+
+button{
+    padding:14px;
+}
+
+}

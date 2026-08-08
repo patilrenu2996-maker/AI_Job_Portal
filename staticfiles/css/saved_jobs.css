@@ -1,0 +1,147 @@
+/* ===========================
+   Saved Jobs Page
+=========================== */
+
+body{
+    margin:0;
+    padding:0;
+    background:#f5f7fb;
+    font-family:'Poppins',sans-serif;
+}
+
+.saved-container{
+    width:90%;
+    margin:40px auto;
+}
+
+.saved-title{
+    text-align:center;
+    color:#2563eb;
+    font-size:32px;
+    font-weight:700;
+    margin-bottom:35px;
+}
+
+.jobs-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+    gap:25px;
+}
+
+.job-card{
+    background:#fff;
+    border-radius:16px;
+    padding:22px;
+    box-shadow:0 8px 20px rgba(0,0,0,.08);
+    transition:.3s;
+    border-top:5px solid #2563eb;
+}
+
+.job-card:hover{
+    transform:translateY(-6px);
+    box-shadow:0 12px 30px rgba(37,99,235,.18);
+}
+
+.job-card h2{
+    color:#1e40af;
+    margin-bottom:15px;
+    font-size:22px;
+}
+
+.job-card p{
+    color:#555;
+    margin:10px 0;
+    font-size:15px;
+}
+
+.job-card i{
+    color:#2563eb;
+    margin-right:8px;
+}
+
+.job-buttons{
+    display:flex;
+    gap:12px;
+    margin-top:20px;
+}
+
+.view-btn{
+    flex:1;
+    background:#2563eb;
+    color:white;
+    border:none;
+    padding:11px;
+    border-radius:8px;
+    cursor:pointer;
+    font-weight:600;
+    transition:.3s;
+}
+
+.view-btn:hover{
+    background:#1d4ed8;
+}
+
+.remove-btn{
+    flex:1;
+    background:#ef4444;
+    color:white;
+    border:none;
+    padding:11px;
+    border-radius:8px;
+    cursor:pointer;
+    font-weight:600;
+    transition:.3s;
+}
+
+.remove-btn:hover{
+    background:#dc2626;
+}
+
+.empty-box{
+    background:white;
+    padding:50px;
+    border-radius:16px;
+    text-align:center;
+    box-shadow:0 8px 20px rgba(0,0,0,.08);
+}
+
+.empty-box i{
+    font-size:70px;
+    color:#94a3b8;
+    margin-bottom:20px;
+}
+
+.empty-box h2{
+    color:#475569;
+}
+
+@media(max-width:768px){
+
+    .saved-container{
+        width:95%;
+    }
+
+    .saved-title{
+        font-size:26px;
+    }
+
+    .job-buttons{
+        flex-direction:column;
+    }
+
+}
+
+.save-btn{
+    flex:1;
+    padding:13px;
+    border:none;
+    border-radius:10px;
+    background:#f59e0b;
+    color:white;
+    cursor:pointer;
+    font-weight:600;
+}
+
+.save-btn:hover{
+    background:#d97706;
+}
